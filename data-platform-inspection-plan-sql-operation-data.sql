@@ -1,0 +1,53 @@
+CREATE TABLE `data_platform_inspection_plan_operation_data`
+(
+	`InspectionPlanGroup`                       int(12) NOT NULL,
+	`InspectionPlan`                            int(4) NOT NULL,
+	`InspectionPlanInternalVersion`             varchar(8) NOT NULL,
+    `InspectionPlanOperationGroup`              varchar(8) NOT NULL,
+    `InspectionPlanOperation`                   varchar(2) NOT NULL,
+    `InspectionPlanOperationSequence`           varchar(6) NOT NULL,
+    `InspectionPlanOperationInternalID`         int(6) NOT NULL,
+    `InspectionPlanOperationInternalVersion`    varchar(8) NOT NULL,
+	`ValidityStartDate`                         date NOT NULL,
+	`ValidityEndDate`                           date NOT NULL,
+    `Operation`                                 int(4) DEFAULT NULL,
+    `LongTextLanguageCode`                      varchar(2) DEFAULT NULL,
+    `OperationControlProfile`                   varchar(4) DEFAULT NULL,
+    `OperationStandardTextCode`                 varchar(7) DEFAULT NULL,
+    `CapacityCategoryCode`                      varchar(3) DEFAULT NULL,
+    `OperationCostingRelevancyType`             varchar(1) DEFAULT NULL,
+    `NumberOfTimeTickets`                       varchar(4) DEFAULT NULL,
+    `NumberOfConfirmationSlips`                 varchar(3) DEFAULT NULL,
+    `OperationSetupType`                        varchar(2) DEFAULT NULL,
+    `OperationSetupGroupCategory`               varchar(10) DEFAULT NULL,
+    `OperationSetupGroup`                       varchar(10) DEFAULT NULL,
+    `OperationReferenceQuantity`                varchar(15) DEFAULT NULL,
+    `OperationUnit`                             varchar(3) DEFAULT NULL,
+    `OpQtyToBaseQtyNmrtr`                       varchar(6) DEFAULT NULL,
+    `OpQtyToBaseQtyDnmntr`                      varchar(6) DEFAULT NULL,
+    `MaximumWaitDuration`                       varchar(11) DEFAULT NULL,
+    `MaximumWaitDurationUnit`                   varchar(3) DEFAULT NULL,
+    `MinimumWaitDuration`                       varchar(11) DEFAULT NULL,
+    `MinimumWaitDurationUnit`                   varchar(3) DEFAULT NULL,
+    `StandardQueueDuration`                     varchar(11) DEFAULT NULL,
+    `StandardQueueDurationUnit`                 varchar(3) DEFAULT NULL,
+    `MinimumQueueDuration`                      varchar(11) DEFAULT NULL,
+    `MinimumQueueDurationUnit`                  varchar(3) DEFAULT NULL,
+    `StandardMoveDuration`                      varchar(11) DEFAULT NULL,
+    `StandardMoveDurationUnit`                  varchar(3) DEFAULT NULL,
+    `MinimumMoveDuration`                       varchar(11) DEFAULT NULL,
+    `MinimumMoveDurationUnit`                   varchar(3) DEFAULT NULL,
+    `NumberOfOperationPriceUnits`               varchar(6) DEFAULT NULL,
+    `OperationScrapPercent`                     varchar(7) DEFAULT NULL,
+    `OperationText`                             varchar(200) DEFAULT NULL,
+    `CreationDate`                              date DEFAULT NULL,
+    `LastChangeDate`                            date DEFAULT NULL,
+    `PlainLongText`                             varchar(200) DEFAULT NULL,
+
+    PRIMARY KEY (`InspectionPlanGroup`, `InspectionPlan`, `InspectionPlanInternalVersion`, `InspectionPlanOperationGroup`, `InspectionPlanOperation`, `InspectionPlanOperation`, `InspectionPlanOperationSequence`, `InspectionPlanOperationInternalID`, `InspectionPlanOperationInternalVersion`, `ValidityStartDate`, `ValidityEndDate`),
+
+    CONSTRAINT `DPFMInspectionPlanOperationData_fk` FOREIGN KEY (`InspectionPlanGroup`, `InspectionPlan`, `InspectionPlanInternalVersion`) REFERENCES `data_platform_inspection_plan_header_data`(`InspectionPlanGroup`, `InspectionPlan`, `InspectionPlanInternalVersion`)
+
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
