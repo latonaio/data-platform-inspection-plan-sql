@@ -1,17 +1,15 @@
 CREATE TABLE `data_platform_inspection_plan_operation_data`
 (
-	`InspectionPlanGroup`                       int(12) NOT NULL,
-	`InspectionPlan`                            int(4) NOT NULL,
-	`InspectionPlanInternalVersion`             varchar(8) NOT NULL,
-    `InspectionPlanOperationGroup`              varchar(8) NOT NULL,
-    `InspectionPlanOperation`                   varchar(2) NOT NULL,
-    `InspectionPlanOperationSequence`           varchar(6) NOT NULL,
-    `InspectionPlanOperationInternalID`         int(6) NOT NULL,
-    `InspectionPlanOperationInternalVersion`    varchar(8) NOT NULL,
+	`InspectionPlantBusinessPartner`            int(12) NOT NULL,
+	`InspectionPlant`  			 	            varchar(4) NOT NULL,
+	`InspectionPlan`                            int(16) NOT NULL,
+	`InspectionPlanGroup`                       int(4) NOT NULL,
+	`InspectionPlanInternalVersion`             int(4) NOT NULL,
+    `InspectionPlanOperationGroup`              int(4) NOT NULL,
+    `InspectionPlanOperation`                   int(4) NOT NULL,
+    `InspectionPlanOperationSequence`           int(6) NOT NULL,
 	`ValidityStartDate`                         date NOT NULL,
 	`ValidityEndDate`                           date NOT NULL,
-    `Operation`                                 int(4) DEFAULT NULL,
-    `LongTextLanguageCode`                      varchar(2) DEFAULT NULL,
     `OperationControlProfile`                   varchar(4) DEFAULT NULL,
     `OperationStandardTextCode`                 varchar(7) DEFAULT NULL,
     `CapacityCategoryCode`                      varchar(3) DEFAULT NULL,
@@ -40,14 +38,15 @@ CREATE TABLE `data_platform_inspection_plan_operation_data`
     `NumberOfOperationPriceUnits`               varchar(6) DEFAULT NULL,
     `OperationScrapPercent`                     varchar(7) DEFAULT NULL,
     `OperationText`                             varchar(200) DEFAULT NULL,
+    `PlainLongText`                             varchar(1000) DEFAULT NULL,
     `CreationDate`                              date DEFAULT NULL,
+    `CreationTime`                              time DEFAULT NULL,
     `LastChangeDate`                            date DEFAULT NULL,
-    `PlainLongText`                             varchar(200) DEFAULT NULL,
+    `LastChangeTime`                            time DEFAULT NULL,
 
-    PRIMARY KEY (`InspectionPlanGroup`, `InspectionPlan`, `InspectionPlanInternalVersion`, `InspectionPlanOperationGroup`, `InspectionPlanOperation`, `InspectionPlanOperation`, `InspectionPlanOperationSequence`, `InspectionPlanOperationInternalID`, `InspectionPlanOperationInternalVersion`, `ValidityStartDate`, `ValidityEndDate`),
+    PRIMARY KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanOperationGroup`, `InspectionPlanInternalVersion`, `InspectionPlanOperation`, `InspectionPlanOperationSequence`),
 
-    CONSTRAINT `DPFMInspectionPlanOperationData_fk` FOREIGN KEY (`InspectionPlanGroup`, `InspectionPlan`, `InspectionPlanInternalVersion`) REFERENCES `data_platform_inspection_plan_header_data`(`InspectionPlanGroup`, `InspectionPlan`, `InspectionPlanInternalVersion`)
+    CONSTRAINT `DPFMInspectionPlanOperationData_fk` FOREIGN KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanGroup`, `InspectionPlanInternalVersion`) REFERENCES `data_platform_inspection_plan_header_data`(`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanGroup`, `InspectionPlanInternalVersion`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
-
