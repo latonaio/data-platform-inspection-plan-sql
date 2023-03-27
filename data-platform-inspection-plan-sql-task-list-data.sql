@@ -22,7 +22,7 @@ CREATE TABLE `data_platform_inspection_plan_task_list_data`
 
     PRIMARY KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanGroup`, `InspectionPlanInternalVersion`, `InspectionPlanTaskList`),
 
-    CONSTRAINT `DPFMInspectionPlanTaskListData_fk` FOREIGN KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanGroup`, `InspectionPlanInternalVersion`) REFERENCES `data_platform_inspection_plan_header_data`(`InspectionPlanGroup`, `InspectionPlan`, `InspectionPlanInternalVersion`)
+    CONSTRAINT `DPFMInspectionPlanTaskListData_fk` FOREIGN KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanGroup`, `InspectionPlanInternalVersion`) REFERENCES `data_platform_inspection_plan_header_data` (`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanGroup`, `InspectionPlanInternalVersion`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
