@@ -17,6 +17,6 @@ CREATE TABLE `data_platform_inspection_plan_header_data`
 
     CONSTRAINT `DataPlatformInspectionPlanHeaderData_fk` FOREIGN KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`),
     CONSTRAINT `DataPlatformInspectionPlanHeaderDataProduct_fk` FOREIGN KEY (`Product`) REFERENCES `data_platform_product_master_general_data` (`Product`)
-
+	
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

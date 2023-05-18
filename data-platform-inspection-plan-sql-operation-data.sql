@@ -47,6 +47,7 @@ CREATE TABLE `data_platform_inspection_plan_operation_data`
     PRIMARY KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanOperationGroup`, `InspectionPlanInternalVersion`, `InspectionPlanOperation`, `InspectionPlanOperationSequence`),
 
     CONSTRAINT `DPFMInspectionPlanOperationData_fk` FOREIGN KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanGroup`, `InspectionPlanInternalVersion`) REFERENCES `data_platform_inspection_plan_header_data`(`InspectionPlantBusinessPartner`, `InspectionPlant`, `InspectionPlan`, `InspectionPlanGroup`, `InspectionPlanInternalVersion`)
+    
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

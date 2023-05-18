@@ -15,7 +15,7 @@ CREATE TABLE `data_platform_inspection_plan_task_list_data`
 	`ValidityStartDate`                    date NOT NULL,
 	`ValidityEndDate`                      date NOT NULL,
     `CreationDate`                         date DEFAULT NULL,
-    `Creationtime`                         date DEFAULT NULL,
+    `Creationtime`                         time DEFAULT NULL,
     `LastChangeDate`                       date DEFAULT NULL,
     `LastChangetime`                       time DEFAULT NULL,
     `IsMarkedForDeletion`                  tinyint(1) DEFAULT NULL,
