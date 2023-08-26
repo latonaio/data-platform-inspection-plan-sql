@@ -11,10 +11,12 @@ https://api.XXXXXXXX.com/api/OP_API_XXXXXXX_XXX/overview
 data-platform-inspection-plan-sql には、sqlの設定ファイルとして、以下のファイルが含まれています。  
 
 * data-platform-inspection-plan-sql-header-data.sql（データ連携基盤 品質検査計画 - ヘッダデータ）
-* data-platform-inspection-plan-sql-spec-data.sql（データ連携基盤 品質検査計画 - スペックデータ）
-* data-platform-inspection-plan-sql-task-list-data.sql（データ連携基盤 品質検査計画 - タスクリストデータ）
-* data-platform-inspection-plan-sql-operation-data.sql（データ連携基盤 品質検査計画 - 作業データ）
+* data-platform-inspection-plan-sql-header-doc-data.sql（データ連携基盤 品質検査計画 - ヘッダ文書データ）
+* data-platform-inspection-plan-sql-spec-general-data.sql（データ連携基盤 品質検査計画 - スペック一般データ）
+* data-platform-inspection-plan-sql-spec-detail-data.sql（データ連携基盤 品質検査計画 - スペック詳細データ）
 * data-platform-inspection-plan-sql-component-composition-data.sql（データ連携基盤 品質検査計画 - 構成品目構成物質データ）
+* data-platform-inspection-plan-sql-inspection-data.sql（データ連携基盤 品質検査計画 - 品質検査データ）
+* data-platform-inspection-plan-sql-operation-data.sql（データ連携基盤 品質検査計画 - 作業データ）
 
 ## MySQLのセットアップ / Kubernetesの設定 / SQLテーブルの作成方法
 
