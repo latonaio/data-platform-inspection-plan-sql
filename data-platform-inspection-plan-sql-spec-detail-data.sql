@@ -6,6 +6,7 @@ CREATE TABLE `data_platform_inspection_plan_spec_detail_data`
     `LowerLimitValue`                      float(10) NOT NULL,
     `StandardValue`                        float(10) NOT NULL,
     `SpecTypeUnit`                         varchar(3) NOT NULL,
+    `Formula`                              varchar(1000) DEFAULT NULL,
     `CreationDate`                         date NOT NULL,
     `LastChangeDate`                       date NOT NULL,
     `IsMarkedForDeletion`                  tinyint(1) DEFAULT NULL,

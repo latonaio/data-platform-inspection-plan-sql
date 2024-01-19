@@ -2,7 +2,7 @@ CREATE TABLE `data_platform_inspection_plan_component_composition_data`
 (
 	`InspectionPlan`                                int(16) NOT NULL,
     `ComponentCompositionType`                      varchar(6) NOT NULL,
-    `ComponentCompositionUperLimitInPercent`        float(10) NOT NULL,
+    `ComponentCompositionUpperLimitInPercent`       float(10) NOT NULL,
     `ComponentCompositionLowerLimitInPercent`       float(10) NOT NULL,
     `ComponentCompositionStandardValueInPercent`    float(10) NOT NULL,
 	`CreationDate`                       			date NOT NULL,

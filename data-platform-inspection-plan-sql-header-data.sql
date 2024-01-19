@@ -9,14 +9,16 @@ CREATE TABLE `data_platform_inspection_plan_header_data`
 	`ProductSpecification`		 	 varchar(200) DEFAULT NULL,
 	`InspectionSpecification`		 varchar(200) DEFAULT NULL,
 	`InspectionPlanHeaderText`		 varchar(200) DEFAULT NULL,
+  	`CertificateAuthorityChain`      varchar(2000) DEFAULT NULL,
+  	`UsageControlChain`              varchar(2000) DEFAULT NULL,
 	`CreationDate`                   date NOT NULL,
 	`LastChangeDate`                 date NOT NULL,
 	`IsMarkedForDeletion`            tinyint(1) DEFAULT NULL,
 
     PRIMARY KEY (`InspectionPlan`),
 
-    CONSTRAINT `DataPlatformInspectionPlanHeaderData_fk` FOREIGN KEY (`BusinessPartner`, `Plant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`),
-    CONSTRAINT `DataPlatformInspectionPlanHeaderDataProduct_fk` FOREIGN KEY (`Product`, `BusinessPartner`, `Plant`) REFERENCES `data_platform_product_master_quality_data` (`Product`, `BusinessPartner`, `Plant`)
-	
+    CONSTRAINT `DPFMInspectionPlanHeaderData_fk` FOREIGN KEY (`InspectionPlantBusinessPartner`, `InspectionPlant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`),
+    CONSTRAINT `DPFMInspectionPlanHeaderDataProduct_fk` FOREIGN KEY (`Product`, `InspectionPlantBusinessPartner`, `InspectionPlant`) REFERENCES `data_platform_product_master_quality_data` (`Product`, `BusinessPartner`, `Plant`)
+
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

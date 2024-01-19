@@ -51,6 +51,10 @@ CREATE TABLE `data_platform_inspection_plan_operation_data`
     `StandardDeliveryDuration`                 float(11) DEFAULT NULL,
     `StandardDeliveryDurationUnit`             varchar(3) DEFAULT NULL,
     `StandardOperationScrapPercent`            float(7) DEFAULT NULL,
+    `PlannedOperationStandardValue`            float(15) DEFAULT NULL,
+    `PlannedOperationLowerValue`               float(15) DEFAULT NULL,
+    `PlannedOperationUpperValue`               float(15) DEFAULT NULL,
+    `PlannedOperationValueUnit`                varchar(3) DEFAULT NULL,
     `CostElement`                              varchar(10) DEFAULT NULL,
     `ValidityStartDate`                        date DEFAULT NULL,
     `ValidityEndDate`                          date DEFAULT NULL,
@@ -72,7 +76,8 @@ CREATE TABLE `data_platform_inspection_plan_operation_data`
     CONSTRAINT `DPFMInspectionPlanOperationDataWaitDurationUnit_fk` FOREIGN KEY (`WaitDurationUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
     CONSTRAINT `DPFMInspectionPlanOperationDataQueueDurationUnit_fk` FOREIGN KEY (`QueueDurationUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
     CONSTRAINT `DPFMInspectionPlanOperationDataMoveDurationUnit_fk` FOREIGN KEY (`MoveDurationUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
-    CONSTRAINT `DPFMInspectionPlanOperationDataStandardDeliveryDurationUnit_fk` FOREIGN KEY (`StandardDeliveryDurationUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`)
-    
+    CONSTRAINT `DPFMInspectionPlanOperationDataStandardDeliveryDurationUnit_fk` FOREIGN KEY (`StandardDeliveryDurationUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
+    CONSTRAINT `DPFMInspectionPlanOperationDataPlannedOperationValueUnit_fk` FOREIGN KEY (`PlannedOperationValueUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`)
+
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
